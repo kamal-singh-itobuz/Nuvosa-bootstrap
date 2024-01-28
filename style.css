@@ -47,35 +47,30 @@
 .hero-main-heading {
   color: #212528;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 30px;
   font-family: "Inter";
 }
 
 .hero-text {
   color: #727272;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 15px;
   font-family: "Poppins";
 }
 
 .expert-txt {
   color: #6F77F1;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 30px;
   font-family: "Poppins";
 }
 
 .hero-sec-button {
   color: #212528;
   background-color: #FAD725 !important;
-  font-size: 16px !important;
+  font-size: 17px !important;
   font-weight: 500 !important;
   border-radius: 1px;
-}
-
-.hero-main-img {
-  width: 300px;
-  height: 400px;
 }
 
 .expert-txt {
@@ -85,37 +80,70 @@
   display: inline-block;
 }
 
-@media (min-width: 650px) {
-  .hero-main-heading {
-    color: #212528;
-    font-weight: 600;
-    font-size: 55px;
-    font-family: "Inter";
-  }
-  .hero-sec-button {
-    color: #212528;
-    background-color: #FAD725 !important;
-    font-size: 24px !important;
-    font-weight: 500 !important;
-    border-radius: 1px;
-  }
-  .hero-main-img {
-    width: 350px;
-    height: 500px;
-  }
+.expert-dot {
+  height: 12px;
+  width: 12px;
+  background-color: #6F77F1;
 }
+
 @media (min-width: 1024px) {
   .hero-main-heading {
     color: #212528;
     font-weight: 700;
-    font-size: 90px;
+    font-size: 60px;
     font-family: "Inter";
+  }
+  .expert-txt {
+    color: #6F77F1;
+    font-weight: 700;
+    font-size: 60px;
+    font-family: "Poppins";
+  }
+  .hero-sec-button {
+    color: #212528;
+    background-color: #FAD725 !important;
+    font-size: 22px !important;
+    font-weight: 500 !important;
+    border-radius: 1px;
   }
   .hero-main-img {
     width: 500px;
     height: 600px;
   }
 }
+.creative-team-card {
+  width: 220px;
+  height: 100px;
+  box-shadow: 5px 5px 20px rgb(208, 200, 200);
+  left: 15%;
+}
+
+@media (min-width: 992px) {
+  .creative-team-card {
+    left: -90px;
+    bottom: 75px;
+  }
+}
+.team-member-img-container1 {
+  left: 10px;
+}
+
+.team-member-img-container2 {
+  left: 45px;
+}
+
+.team-member-img-container3 {
+  left: 80px;
+}
+
+.team-member-img-container4 {
+  left: 115px;
+}
+
+.team-member-img-container5 {
+  left: 150px;
+}
+
 .management-headings {
   color: #212528;
   font-weight: 400;
@@ -201,7 +229,6 @@
 .optimising-cards > div > div {
   transition: transform 0.6s ease-out;
 }
-
 .optimising-cards > div > div:hover {
   transform: scale(1.01);
   box-shadow: 5px 5px 20px rgb(203, 200, 200);
@@ -275,7 +302,6 @@
 .grow-buss-cards > div {
   transition: transform 0.6s ease-out;
 }
-
 .grow-buss-cards > div:hover {
   transform: scale(1.01);
   box-shadow: 5px 5px 20px rgb(203, 200, 200);
@@ -321,7 +347,6 @@
   box-shadow: 2px 2px 10px rgb(229, 226, 226);
   transition: transform 0.6s ease-out;
 }
-
 .chooser-cards > div:hover {
   transform: scale(1.01);
   box-shadow: 5px 5px 20px rgb(203, 200, 200);
@@ -492,7 +517,6 @@
 .plans-cards > div .plans-buttons {
   border: 1px solid black;
 }
-
 .plans-cards > div:hover {
   transform: scale(1.02);
   box-shadow: 3px 3px 10px rgb(203, 200, 200);
@@ -552,7 +576,6 @@
   border: 1px solid rgb(233, 228, 228);
   transition: transform 0.6s ease-out;
 }
-
 .expert-team-cards > div:hover {
   transform: scale(1.02);
   border: none;
@@ -645,6 +668,16 @@
     font-weight: 400;
     font-size: 20px;
     font-family: "Poppins";
+  }
+}
+.speed-subscribe-input {
+  width: 90%;
+  outline: none;
+}
+
+@media (min-width: 1200px) {
+  .speed-subscribe-input {
+    width: 80%;
   }
 }
 .footer-copyright {

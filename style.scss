@@ -46,39 +46,64 @@ $font-family-used: 'Poppins';
 @include assign-color-mixin("nav-link", $sections-heading-color, 400, 24px, $font-family-used);
 .let-us-talk-btn {
     border: 2px solid $sections-heading-color;
-    font: 500 24px 'Poppins';
+    font: 500 24px $font-family-used;
 }
 @include button-style-mixin("search-btn", $sections-heading-color, $button-color, 24px, 500, 1px);
 
 //HERO SECTION
-@include assign-color-mixin("hero-main-heading", $sections-heading-color, 600, 40px, 'Inter');
-@include assign-color-mixin("hero-text", $hero-section-content-color, 400, 17px, $font-family-used);
-@include assign-color-mixin("expert-txt", $expert-purple-color, 600, 40px, $font-family-used);
-@include button-style-mixin("hero-sec-button", $sections-heading-color, $button-color, 16px, 500, 1px);
-.hero-main-img{
-    width: 300px;
-    height: 400px;
-}
+@include assign-color-mixin("hero-main-heading", $sections-heading-color, 600, 30px, 'Inter');
+@include assign-color-mixin("hero-text", $hero-section-content-color, 400, 15px, $font-family-used);
+@include assign-color-mixin("expert-txt", $expert-purple-color, 600, 30px, $font-family-used);
+@include button-style-mixin("hero-sec-button", $sections-heading-color, $button-color, 17px, 500, 1px);
+
 .expert-txt {
     border: 2.288px solid $expert-purple-color;
     transform: rotate(-8.234deg);
     -webkit-transform: rotate(-8.234deg);
     display: inline-block;
 }
-@media (min-width:650px) {
-    @include assign-color-mixin("hero-main-heading", $sections-heading-color, 600, 55px, 'Inter');
-    @include button-style-mixin("hero-sec-button", $sections-heading-color, $button-color, 24px, 500, 1px);
-    .hero-main-img{
-        width: 350px;
-        height: 500px;
-    }
+.expert-dot{
+    height: 12px;
+    width: 12px;
+    background-color: $expert-purple-color;
 }
+
 @media (min-width:1024px){
-    @include assign-color-mixin("hero-main-heading", $sections-heading-color, 700, 90px, 'Inter');
+    @include assign-color-mixin("hero-main-heading", $sections-heading-color, 700, 60px, 'Inter');
+    @include assign-color-mixin("expert-txt", $expert-purple-color, 700, 60px, $font-family-used);
+    @include button-style-mixin("hero-sec-button", $sections-heading-color, $button-color, 22px, 500, 1px);
     .hero-main-img{
         width: 500px;
         height: 600px;
     }
+}
+.creative-team-card{
+    width: 220px;
+    height: 100px;
+    box-shadow: 5px 5px 20px rgb(208, 200, 200);
+    left: 15%;
+}
+@media (min-width: 992px){
+    .creative-team-card {
+        left: -90px;
+        bottom: 75px;
+    }
+   
+}
+.team-member-img-container1{
+    left: 10px;
+}
+.team-member-img-container2{
+    left: 45px;
+}
+.team-member-img-container3{
+    left: 80px;
+}
+.team-member-img-container4{
+    left: 115px;
+}
+.team-member-img-container5{
+    left: 150px;
 }
 
 //MANAGEMENT SECTION
@@ -102,12 +127,13 @@ $font-family-used: 'Poppins';
 }
 .optimising-cards> div >div{
     transition: transform 0.6s ease-out;
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: 5px 5px 20px rgb(203, 200, 200);
+        border-bottom: 2px solid $expert-purple-color;
+    }
 }
-.optimising-cards>div>div:hover {
-    transform: scale(1.01);
-    box-shadow: 5px 5px 20px rgb(203, 200, 200);
-    border-bottom: 2px solid $expert-purple-color; 
-}
+
 
 //SOLUTION FOR BUSSINESS SECTION BEGIN
 @include button-style-mixin("bussiness-sec-button", $sections-heading-color, $button-color, 18px, 500, 1px);
@@ -125,11 +151,12 @@ $font-family-used: 'Poppins';
 @include assign-color-mixin("grow-buss-readmore", $expert-purple-color, 500, 14px, $font-family-used);
 .grow-buss-cards>div{
     transition: transform 0.6s ease-out;
+    &:hover{
+        transform: scale(1.01);
+        box-shadow: 5px 5px 20px rgb(203, 200, 200);
+    }
 }
-.grow-buss-cards>div:hover{
-    transform: scale(1.01);
-    box-shadow: 5px 5px 20px rgb(203, 200, 200);
-}
+
 // CHOOSER SECTION
 @include button-style-mixin("chooser-button", $sections-heading-color, $button-color, 14px, 500, 2px);
 @include assign-color-mixin("chooser-heading", $sections-heading-color, 500, 55px, $font-family-used);
@@ -139,10 +166,10 @@ $font-family-used: 'Poppins';
 .chooser-cards>div{
     box-shadow: 2px 2px 10px rgb(229, 226, 226);
     transition: transform 0.6s ease-out;
-}
-.chooser-cards>div:hover{
-    transform: scale(1.01);
-    box-shadow: 5px 5px 20px rgb(203, 200, 200);
+    &:hover{
+        transform: scale(1.01);
+        box-shadow: 5px 5px 20px rgb(203, 200, 200);
+    }
 }
 
 //NEED IT SECTION
@@ -209,17 +236,17 @@ $font-family-used: 'Poppins';
     .plans-buttons{
         border: 1px solid black;
     }
-}
-.plans-cards>div:hover{
-    transform: scale(1.02);
-    box-shadow: 3px 3px 10px rgb(203, 200, 200);
-    background-color: $expert-purple-color !important;
-    h4, h6, p, .card-price{
-        color: white;
-    }
-    .plans-buttons{
-        background-color: $button-color;
-        border: 1px solid black;
+    &:hover{
+        transform: scale(1.02);
+        box-shadow: 3px 3px 10px rgb(203, 200, 200);
+        background-color: $expert-purple-color !important;
+        h4, h6, p, .card-price{
+            color: white;
+        }
+        .plans-buttons{
+            background-color: $button-color;
+            border: 1px solid black;
+        }
     }
 }
 
@@ -235,11 +262,11 @@ $font-family-used: 'Poppins';
 .expert-team-cards>div{
     border: 1px solid rgb(233, 228, 228);
     transition: transform 0.6s ease-out;
-}
-.expert-team-cards>div:hover {
-    transform: scale(1.02);
-    border: none;
-    box-shadow: 3px 3px 20px rgb(203, 200, 200);
+    &:hover{
+        transform: scale(1.02);
+        border: none;
+        box-shadow: 3px 3px 20px rgb(203, 200, 200);
+    }
 }
 
 // OUR CLIENTS SECTION
@@ -268,6 +295,15 @@ $font-family-used: 'Poppins';
 @media (min-width: 485px){
     @include assign-color-mixin("subscribe-heading", $sections-heading-color, 500, 50px, $font-family-used);
     @include assign-color-mixin("subscribe-text", $sections-content-color, 400, 20px, $font-family-used);
+}
+.speed-subscribe-input {
+    width: 90%;
+    outline: none;
+}
+@media (min-width: 1200px){ //extra Large
+    .speed-subscribe-input{
+        width: 80%;
+    }
 }
 
 // FOOTER SECTION
