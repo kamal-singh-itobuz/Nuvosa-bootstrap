@@ -17,7 +17,11 @@
   font-family: "Poppins";
 }
 
-.dot-with-logo {
+.navbar-logo .navbar-brand-style {
+  cursor: pointer;
+}
+.navbar-logo .dot-with-logo {
+  cursor: pointer;
   background-color: #BC424E;
   height: 8px;
   width: 8px;
@@ -44,10 +48,40 @@
   border-radius: 1px;
 }
 
+.nav-long-line {
+  display: none;
+  height: 2px;
+  width: 60%;
+  background-color: #6F77F1;
+  border-radius: 3px;
+  bottom: 6px;
+  left: 12%;
+}
+
+.nav-short-line {
+  display: none;
+  height: 2px;
+  width: 10%;
+  background-color: #6F77F1;
+  border-radius: 3px;
+  bottom: 6px;
+  left: 80%;
+}
+
+.nav-item {
+  transition: all 0.9s ease-out;
+}
+
+@media (min-width: 768px) {
+  .nav-item:hover .nav-long-line, .nav-item:hover .nav-short-line {
+    display: inline-block;
+  }
+}
+
 .hero-main-heading {
   color: #212528;
-  font-weight: 600;
-  font-size: 30px;
+  font-weight: 700;
+  font-size: 40px;
   font-family: "Inter";
 }
 
@@ -61,7 +95,7 @@
 .expert-txt {
   color: #6F77F1;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 40px;
   font-family: "Poppins";
 }
 
@@ -90,13 +124,13 @@
   .hero-main-heading {
     color: #212528;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 55px;
     font-family: "Inter";
   }
   .expert-txt {
     color: #6F77F1;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 55px;
     font-family: "Poppins";
   }
   .hero-sec-button {
@@ -196,7 +230,7 @@
 .op-card-text {
   color: #828282;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Poppins";
 }
 
@@ -204,13 +238,13 @@
   .optimising-heading {
     color: #212528;
     font-weight: 500;
-    font-size: 55px;
+    font-size: 50px;
     font-family: "Poppins";
   }
   .optimising-text {
     color: #828282;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     font-family: "Poppins";
   }
   .op-card-heading {
@@ -253,7 +287,7 @@
 .bussiness-text {
   color: #828282;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Poppins";
 }
 
@@ -261,7 +295,7 @@
   .bussiness-heading {
     color: #212528;
     font-weight: 500;
-    font-size: 55px;
+    font-size: 50px;
     font-family: "Poppins";
   }
   .bussiness-text {
@@ -286,7 +320,7 @@
 }
 
 .grow-buss-text {
-  color: #212528;
+  color: #828282;
   font-weight: 400;
   font-size: 17px;
   font-family: "Poppins";
@@ -318,7 +352,7 @@
 .chooser-heading {
   color: #212528;
   font-weight: 500;
-  font-size: 55px;
+  font-size: 50px;
   font-family: "Poppins";
 }
 
@@ -354,7 +388,7 @@
 
 .need-it-heading {
   color: #212528;
-  font-weight: 450;
+  font-weight: 500;
   font-size: 35px;
   font-family: "Poppins";
 }
@@ -362,7 +396,7 @@
 .need-it-text {
   color: #828282;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Poppins";
 }
 
@@ -377,7 +411,7 @@
   .need-it-heading {
     color: #212528;
     font-weight: 500;
-    font-size: 52px;
+    font-size: 50px;
     font-family: "Poppins";
   }
   .need-it-text {
@@ -443,7 +477,7 @@
 .website-text {
   color: #828282;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Poppins";
 }
 
@@ -459,7 +493,7 @@
   .website-heading {
     color: #212528;
     font-weight: 500;
-    font-size: 55px;
+    font-size: 50px;
     font-family: "Poppins";
   }
   .website-text {
@@ -479,7 +513,7 @@
 .our-plan-text {
   color: #828282;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Poppins";
 }
 
@@ -501,7 +535,7 @@
   .our-plan-heading {
     color: #212528;
     font-weight: 500;
-    font-size: 55px;
+    font-size: 50px;
     font-family: "Poppins";
   }
   .our-plan-text {
@@ -517,6 +551,10 @@
 .plans-cards > div .plans-buttons {
   border: 1px solid black;
 }
+.plans-cards > div .plans-buttons:hover {
+  background-color: #FAD725;
+  border: 1px solid black;
+}
 .plans-cards > div:hover {
   transform: scale(1.02);
   box-shadow: 3px 3px 10px rgb(203, 200, 200);
@@ -524,10 +562,6 @@
 }
 .plans-cards > div:hover h4, .plans-cards > div:hover h6, .plans-cards > div:hover p, .plans-cards > div:hover .card-price {
   color: white;
-}
-.plans-cards > div:hover .plans-buttons {
-  background-color: #FAD725;
-  border: 1px solid black;
 }
 
 .expert-heading {
@@ -623,15 +657,37 @@
     font-family: "Poppins";
   }
 }
-.clients-cards > div {
-  border: 1px solid rgb(233, 228, 228);
-  transition: transform 0.6s ease-out;
+.clients-cards::-webkit-scrollbar {
+  display: none;
 }
 
+.clients-cards > div {
+  width: 300px;
+  transition: transform 0.6s ease-out;
+}
 .clients-cards > div:hover {
   transform: scale(1.02);
   border: none;
   box-shadow: 3px 3px 20px rgb(203, 200, 200);
+}
+
+@media (min-width: 700px) {
+  .clients-cards > div {
+    width: 600px;
+  }
+}
+.our-clients-scroll-dots > span {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: grey;
+}
+
+.our-clients-scroll-dots .scroll-second {
+  background-color: #6F77F1;
+  height: 18px;
+  width: 18px;
 }
 
 .subscribe-heading {
@@ -692,4 +748,8 @@
   font-weight: 400;
   font-size: 20px;
   font-family: "Poppins";
+}
+
+.footer-last-text p {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

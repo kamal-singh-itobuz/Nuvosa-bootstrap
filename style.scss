@@ -7,13 +7,15 @@
 }
 $button-color: #FAD725;
 $expert-purple-color: #6F77F1;
-$hero-section-heading-font: normal 700 90px 'Inter';
-$hero-section-content-font: normal 400 20px/30px 'Poppins';
 $hero-section-content-color: #727272;
 $sections-heading-color: #212528;
 $sections-content-color: #828282;
-$sections-heading-font: normal 500 55px/65px 'Poppins';
-$sections-content-font: normal 400 17px/27px 'Poppins';
+$sections-heading-fs-md: 50px;
+$sections-heading-fs-sm: 35px;
+$sections-content-fs-md: 17px;
+$sections-content-fs-sm: 13px;
+$sections-content-fw: 400;
+$sections-heading-fw: 500;
 $font-family-used: 'Poppins';
 @mixin assign-color-mixin($name, $color, $font-weight, $font-size, $font-family){
     .#{$name}{
@@ -37,11 +39,17 @@ $font-family-used: 'Poppins';
 }
 // NAVBAR STYLE
 @include assign-color-mixin("navbar-brand-style", $sections-heading-color, 500, 40px, $font-family-used);
-.dot-with-logo{
-    background-color: #BC424E;
-    height: 8px;
-    width: 8px;
-    border-radius: 50%;
+.navbar-logo{
+    .navbar-brand-style{
+        cursor: pointer;
+    }
+    .dot-with-logo{
+        cursor: pointer;
+        background-color: #BC424E;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+    }
 }
 @include assign-color-mixin("nav-link", $sections-heading-color, 400, 24px, $font-family-used);
 .let-us-talk-btn {
@@ -49,11 +57,38 @@ $font-family-used: 'Poppins';
     font: 500 24px $font-family-used;
 }
 @include button-style-mixin("search-btn", $sections-heading-color, $button-color, 24px, 500, 1px);
-
+.nav-long-line {
+    display: none;
+    height: 2px;
+    width: 60%;
+    background-color: $expert-purple-color;
+    border-radius: 3px;
+    bottom: 6px;
+    left: 12%;
+}
+.nav-short-line {
+    display: none;
+    height: 2px;
+    width: 10%;
+    background-color: $expert-purple-color;
+    border-radius: 3px;
+    bottom: 6px;
+    left: 80%;
+}
+.nav-item{
+    transition: all 0.9s ease-out;
+}
+.nav-item:hover{
+    @media (min-width: 768px){
+        .nav-long-line, .nav-short-line{
+            display: inline-block;
+        }
+    }
+}
 //HERO SECTION
-@include assign-color-mixin("hero-main-heading", $sections-heading-color, 600, 30px, 'Inter');
+@include assign-color-mixin("hero-main-heading", $sections-heading-color, 700, 40px, 'Inter');
 @include assign-color-mixin("hero-text", $hero-section-content-color, 400, 15px, $font-family-used);
-@include assign-color-mixin("expert-txt", $expert-purple-color, 600, 30px, $font-family-used);
+@include assign-color-mixin("expert-txt", $expert-purple-color, 600, 40px, $font-family-used);
 @include button-style-mixin("hero-sec-button", $sections-heading-color, $button-color, 17px, 500, 1px);
 
 .expert-txt {
@@ -69,8 +104,8 @@ $font-family-used: 'Poppins';
 }
 
 @media (min-width:1024px){
-    @include assign-color-mixin("hero-main-heading", $sections-heading-color, 700, 60px, 'Inter');
-    @include assign-color-mixin("expert-txt", $expert-purple-color, 700, 60px, $font-family-used);
+    @include assign-color-mixin("hero-main-heading", $sections-heading-color, 700, 55px, 'Inter');
+    @include assign-color-mixin("expert-txt", $expert-purple-color, 700, 55px, $font-family-used);
     @include button-style-mixin("hero-sec-button", $sections-heading-color, $button-color, 22px, 500, 1px);
     .hero-main-img{
         width: 500px;
@@ -115,15 +150,15 @@ $font-family-used: 'Poppins';
 }
 
 //OPTIMISING WEBSITE SECTION
-@include assign-color-mixin("optimising-heading", $sections-heading-color, 500, 35px, $font-family-used);
-@include assign-color-mixin("optimising-text", $sections-content-color, 400, 13px, $font-family-used);
+@include assign-color-mixin("optimising-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("optimising-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
 @include assign-color-mixin("op-card-heading", $sections-heading-color, 500, 21px, $font-family-used);
-@include assign-color-mixin("op-card-text", $sections-content-color, 400, 12px, $font-family-used);
+@include assign-color-mixin("op-card-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
 @media (min-width: 485px){
-    @include assign-color-mixin("optimising-heading", $sections-heading-color, 500, 55px, $font-family-used);
-    @include assign-color-mixin("optimising-text", $sections-content-color, 400, 20px, $font-family-used);
+    @include assign-color-mixin("optimising-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+    @include assign-color-mixin("optimising-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
     @include assign-color-mixin("op-card-heading", $sections-heading-color, 500, 24px, $font-family-used);
-    @include assign-color-mixin("op-card-text", $sections-content-color, 400, 17px, $font-family-used);
+    @include assign-color-mixin("op-card-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
 .optimising-cards> div >div{
     transition: transform 0.6s ease-out;
@@ -137,18 +172,18 @@ $font-family-used: 'Poppins';
 
 //SOLUTION FOR BUSSINESS SECTION BEGIN
 @include button-style-mixin("bussiness-sec-button", $sections-heading-color, $button-color, 18px, 500, 1px);
-@include assign-color-mixin("bussiness-heading", $sections-heading-color, 500, 35px, $font-family-used);
-@include assign-color-mixin("bussiness-text", $sections-content-color, 400, 12px, $font-family-used);
+@include assign-color-mixin("bussiness-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("bussiness-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
 @media (min-width: 485px) {
-    @include assign-color-mixin("bussiness-heading", $sections-heading-color, 500, 55px, $font-family-used);
-    @include assign-color-mixin("bussiness-text", $sections-content-color, 400, 17px, $font-family-used);
+    @include assign-color-mixin("bussiness-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+    @include assign-color-mixin("bussiness-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
     @include button-style-mixin("bussiness-sec-button", $sections-heading-color, $button-color, 24px, 500, 1px);
 }
 
 // GROW YOUR BUSSINESS SECTION
-@include assign-color-mixin("grow-buss-subheading", $sections-heading-color, 500, 22px, $font-family-used);
-@include assign-color-mixin("grow-buss-text", $sections-heading-color, 400, 17px, $font-family-used);
-@include assign-color-mixin("grow-buss-readmore", $expert-purple-color, 500, 14px, $font-family-used);
+@include assign-color-mixin("grow-buss-subheading", $sections-heading-color, $sections-heading-fw, 22px, $font-family-used);
+@include assign-color-mixin("grow-buss-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
+@include assign-color-mixin("grow-buss-readmore", $expert-purple-color, $sections-heading-fw, 14px, $font-family-used);
 .grow-buss-cards>div{
     transition: transform 0.6s ease-out;
     &:hover{
@@ -158,11 +193,11 @@ $font-family-used: 'Poppins';
 }
 
 // CHOOSER SECTION
-@include button-style-mixin("chooser-button", $sections-heading-color, $button-color, 14px, 500, 2px);
-@include assign-color-mixin("chooser-heading", $sections-heading-color, 500, 55px, $font-family-used);
-@include assign-color-mixin("chooser-text", $sections-content-color, 400, 17px, $font-family-used);
-@include assign-color-mixin("chooser-card-heading", $sections-heading-color, 500, 20px, $font-family-used);
-@include assign-color-mixin("chooser-card-text", $sections-content-color, 400, 17px, $font-family-used);
+@include button-style-mixin("chooser-button", $sections-heading-color, $button-color, 14px, $sections-heading-fw, 2px);
+@include assign-color-mixin("chooser-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+@include assign-color-mixin("chooser-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
+@include assign-color-mixin("chooser-card-heading", $sections-heading-color, $sections-heading-fw, 20px, $font-family-used);
+@include assign-color-mixin("chooser-card-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 .chooser-cards>div{
     box-shadow: 2px 2px 10px rgb(229, 226, 226);
     transition: transform 0.6s ease-out;
@@ -173,12 +208,12 @@ $font-family-used: 'Poppins';
 }
 
 //NEED IT SECTION
-@include assign-color-mixin("need-it-heading", $sections-heading-color, 450, 35px, $font-family-used);
-@include assign-color-mixin("need-it-text", $sections-content-color, 400, 12px, $font-family-used);
-@include assign-color-mixin("need-card-heading", $sections-heading-color, 500, 17px, $font-family-used);
+@include assign-color-mixin("need-it-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("need-it-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
+@include assign-color-mixin("need-card-heading", $sections-heading-color, $sections-heading-fw, 17px, $font-family-used);
 @media (min-width: 485px) {
-    @include assign-color-mixin("need-it-heading", $sections-heading-color, 500, 52px, $font-family-used);
-    @include assign-color-mixin("need-it-text", $sections-content-color, 400, 17px, $font-family-used);
+    @include assign-color-mixin("need-it-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+    @include assign-color-mixin("need-it-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
     @include assign-color-mixin("need-card-heading", $sections-heading-color, 500, 23px, $font-family-used);
 }
 .need-it-cards>div{
@@ -213,28 +248,32 @@ $font-family-used: 'Poppins';
 }
 
 // WEBSITE SPEED SECTION
-@include assign-color-mixin("website-heading", $sections-heading-color, 500, 35px, $font-family-used);
-@include assign-color-mixin("website-text", $sections-content-color, 400, 12px, $font-family-used);
+@include assign-color-mixin("website-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("website-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
 @include button-style-mixin("speed-submit-button", $sections-heading-color, $button-color, 16px, 500, 2px);
 @media (min-width: 485px){
-    @include assign-color-mixin("website-heading", $sections-heading-color, 500, 55px, $font-family-used);
-    @include assign-color-mixin("website-text", $sections-content-color, 400, 17px, $font-family-used);
+    @include assign-color-mixin("website-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+    @include assign-color-mixin("website-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
 
 
 // OUR PLANS SECTION
-@include assign-color-mixin("our-plan-heading", $sections-heading-color, 500, 35px, $font-family-used);
-@include assign-color-mixin("our-plan-text", $sections-content-color, 400, 12px, $font-family-used);
-@include assign-color-mixin("card-price", $sections-heading-color, 500, 49px, $font-family-used);
-@include assign-color-mixin("plan-card-heading", $expert-purple-color, 500, 22px, $font-family-used);
+@include assign-color-mixin("our-plan-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("our-plan-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
+@include assign-color-mixin("card-price", $sections-heading-color, $sections-heading-fw, 49px, $font-family-used);
+@include assign-color-mixin("plan-card-heading", $expert-purple-color, $sections-heading-fw, 22px, $font-family-used);
 @media (min-width: 485px){
-    @include assign-color-mixin("our-plan-heading", $sections-heading-color, 500, 55px, $font-family-used);
-    @include assign-color-mixin("our-plan-text", $sections-content-color, 400, 17px, $font-family-used);
+    @include assign-color-mixin("our-plan-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+    @include assign-color-mixin("our-plan-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
 .plans-cards>div{
     transition: transform 0.6s ease-out;
     .plans-buttons{
         border: 1px solid black;
+        &:hover{
+            background-color: $button-color;
+            border: 1px solid black;
+        }
     }
     &:hover{
         transform: scale(1.02);
@@ -242,10 +281,7 @@ $font-family-used: 'Poppins';
         background-color: $expert-purple-color !important;
         h4, h6, p, .card-price{
             color: white;
-        }
-        .plans-buttons{
-            background-color: $button-color;
-            border: 1px solid black;
+            // -webkit-text-stroke: 1px black;
         }
     }
 }
@@ -278,15 +314,37 @@ $font-family-used: 'Poppins';
     @include assign-color-mixin("client-text", $sections-content-color, 400, 17px, $font-family-used);
     @include assign-color-mixin("client-card-text", $sections-content-color, 400, 17px, $font-family-used);
 }
+
+.clients-cards::-webkit-scrollbar{
+    display: none;
+}
 .clients-cards>div{
-    border: 1px solid rgb(233, 228, 228);
+    width: 300px;
     transition: transform 0.6s ease-out;
+    &:hover {
+        transform: scale(1.02);
+        border: none;
+        box-shadow: 3px 3px 20px rgb(203, 200, 200);
+    }
 }
-.clients-cards>div:hover {
-    transform: scale(1.02);
-    border: none;
-    box-shadow: 3px 3px 20px rgb(203, 200, 200);
+@media (min-width: 700px) {
+    .clients-cards>div{
+        width: 600px;
+    }
 }
+.our-clients-scroll-dots >span{
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: grey;
+}
+.our-clients-scroll-dots .scroll-second{
+    background-color: $expert-purple-color;
+    height: 18px;
+    width: 18px;
+}
+
 
 // SUBSCRIBE SECTION
 @include assign-color-mixin("subscribe-heading", $sections-heading-color, 500, 35px, $font-family-used);
@@ -309,3 +367,6 @@ $font-family-used: 'Poppins';
 // FOOTER SECTION
 @include assign-color-mixin("footer-copyright", $sections-content-color, 400, 13px, $font-family-used);
 @include assign-color-mixin("footer-options", $sections-heading-color, 400, 20px, $font-family-used);
+.footer-last-text p{
+    cursor: pointer;
+}
