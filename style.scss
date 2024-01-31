@@ -238,7 +238,7 @@ $font-family-used: 'Poppins';
     .stats-dot3 span{
         background-color: #F7C745;
     }
-    @include assign-color-mixin("stats-values", #666565, 600, 73px, $font-family-used);
+    @include assign-color-mixin("stats-values", #666565, 600, 60px, $font-family-used);
     @include assign-color-mixin("stats-text", #6F6F6F, 500, 17px, $font-family-used);
 }
 @media (min-width: 992px){
@@ -287,13 +287,13 @@ $font-family-used: 'Poppins';
 }
 
 // EXPERT TEAM MEMBERS SECTION
-@include assign-color-mixin("expert-heading", $sections-heading-color, 500, 35px, $font-family-used);
-@include assign-color-mixin("expert-text", $sections-content-color, 400, 12px, $font-family-used);
-@include assign-color-mixin("expert-name", $sections-heading-color, 500, 22px, $font-family-used);
-@include assign-color-mixin("expert-post", $sections-content-color, 400, 15px, $font-family-used);
+@include assign-color-mixin("expert-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("expert-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
+@include assign-color-mixin("expert-name", $sections-heading-color, $sections-heading-fw, 22px, $font-family-used);
+@include assign-color-mixin("expert-post", $sections-content-color, $sections-content-fw, 15px, $font-family-used);
 @media (min-width: 485px){
-    @include assign-color-mixin("expert-heading", $sections-heading-color, 500, 55px, $font-family-used);
-    @include assign-color-mixin("expert-text", $sections-content-color, 400, 17px, $font-family-used);
+    @include assign-color-mixin("expert-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+    @include assign-color-mixin("expert-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
 .expert-team-cards>div{
     border: 1px solid rgb(233, 228, 228);
@@ -306,13 +306,13 @@ $font-family-used: 'Poppins';
 }
 
 // OUR CLIENTS SECTION
-@include assign-color-mixin("client-heading", $sections-heading-color, 500, 35px, $font-family-used);
-@include assign-color-mixin("client-text", $sections-content-color, 400, 12px, $font-family-used);
-@include assign-color-mixin("client-card-text", $sections-content-color, 400, 12px, $font-family-used);
+@include assign-color-mixin("client-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("client-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
+@include assign-color-mixin("client-card-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
 @media (min-width: 485px){
-    @include assign-color-mixin("client-heading", $sections-heading-color, 500, 55px, $font-family-used);
-    @include assign-color-mixin("client-text", $sections-content-color, 400, 17px, $font-family-used);
-    @include assign-color-mixin("client-card-text", $sections-content-color, 400, 17px, $font-family-used);
+    @include assign-color-mixin("client-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+    @include assign-color-mixin("client-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
+    @include assign-color-mixin("client-card-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
 
 .clients-cards::-webkit-scrollbar{
@@ -347,12 +347,12 @@ $font-family-used: 'Poppins';
 
 
 // SUBSCRIBE SECTION
-@include assign-color-mixin("subscribe-heading", $sections-heading-color, 500, 35px, $font-family-used);
-@include assign-color-mixin("subscribe-text", $sections-content-color, 400, 12px, $font-family-used);
+@include assign-color-mixin("subscribe-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("subscribe-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
 @include button-style-mixin("subscribe-button", $sections-heading-color, $expert-purple-color, 16px, 500, 2px);
 @media (min-width: 485px){
-    @include assign-color-mixin("subscribe-heading", $sections-heading-color, 500, 50px, $font-family-used);
-    @include assign-color-mixin("subscribe-text", $sections-content-color, 400, 20px, $font-family-used);
+    @include assign-color-mixin("subscribe-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+    @include assign-color-mixin("subscribe-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
 .speed-subscribe-input {
     width: 90%;
@@ -365,8 +365,8 @@ $font-family-used: 'Poppins';
 }
 
 // FOOTER SECTION
-@include assign-color-mixin("footer-copyright", $sections-content-color, 400, 13px, $font-family-used);
-@include assign-color-mixin("footer-options", $sections-heading-color, 400, 20px, $font-family-used);
+@include assign-color-mixin("footer-copyright", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
+@include assign-color-mixin("footer-options", $sections-heading-color, $sections-content-fw, 20px, $font-family-used);
 .footer-last-text p{
     cursor: pointer;
 }

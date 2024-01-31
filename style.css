@@ -452,7 +452,7 @@
 .stats-section .stats-values {
   color: #666565;
   font-weight: 600;
-  font-size: 73px;
+  font-size: 60px;
   font-family: "Poppins";
 }
 .stats-section .stats-text {
@@ -574,7 +574,7 @@
 .expert-text {
   color: #828282;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Poppins";
 }
 
@@ -596,7 +596,7 @@
   .expert-heading {
     color: #212528;
     font-weight: 500;
-    font-size: 55px;
+    font-size: 50px;
     font-family: "Poppins";
   }
   .expert-text {
@@ -626,14 +626,14 @@
 .client-text {
   color: #828282;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Poppins";
 }
 
 .client-card-text {
   color: #828282;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Poppins";
 }
 
@@ -641,7 +641,7 @@
   .client-heading {
     color: #212528;
     font-weight: 500;
-    font-size: 55px;
+    font-size: 50px;
     font-family: "Poppins";
   }
   .client-text {
@@ -700,7 +700,7 @@
 .subscribe-text {
   color: #828282;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Poppins";
 }
 
@@ -722,7 +722,7 @@
   .subscribe-text {
     color: #828282;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     font-family: "Poppins";
   }
 }
