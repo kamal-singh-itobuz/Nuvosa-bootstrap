@@ -121,9 +121,14 @@ $font-family-used: 'Poppins';
 @media (min-width: 992px){
     .creative-team-card {
         left: -90px;
+        bottom: 20px;
+    }
+}
+@media (min-width: 1260px){
+    .creative-team-card {
+        left: -90px;
         bottom: 75px;
     }
-   
 }
 .team-member-img-container1{
     left: 10px;
@@ -171,6 +176,9 @@ $font-family-used: 'Poppins';
 
 
 //SOLUTION FOR BUSSINESS SECTION BEGIN
+.bussiness-section {
+    background-image: url("./images/solution-for-bussiness/bg-lines.svg");
+}
 @include button-style-mixin("bussiness-sec-button", $sections-heading-color, $button-color, 18px, 500, 1px);
 @include assign-color-mixin("bussiness-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
 @include assign-color-mixin("bussiness-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
@@ -198,7 +206,7 @@ $font-family-used: 'Poppins';
 @include assign-color-mixin("chooser-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 @include assign-color-mixin("chooser-card-heading", $sections-heading-color, $sections-heading-fw, 20px, $font-family-used);
 @include assign-color-mixin("chooser-card-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
-.chooser-cards>div{
+.chooser-cards>div>div{
     box-shadow: 2px 2px 10px rgb(229, 226, 226);
     transition: transform 0.6s ease-out;
     &:hover{
@@ -266,7 +274,15 @@ $font-family-used: 'Poppins';
     @include assign-color-mixin("our-plan-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
     @include assign-color-mixin("our-plan-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
-.plans-cards>div{
+.our-plans-section {
+    padding: 0 2rem;
+}
+@media (min-width: 1200px){
+    .our-plans-section {
+        padding: 0 10rem;
+    }
+}
+.plans-cards>div>div{
     transition: transform 0.6s ease-out;
     .plans-buttons{
         border: 1px solid black;
@@ -278,7 +294,8 @@ $font-family-used: 'Poppins';
     &:hover{
         transform: scale(1.02);
         box-shadow: 3px 3px 10px rgb(203, 200, 200);
-        background-color: $expert-purple-color !important;
+        // background-color: $expert-purple-color !important;
+        background: url("./images/our-plans/bg-image.svg") no-repeat center;
         h4, h6, p, .card-price{
             color: white;
             // -webkit-text-stroke: 1px black;
@@ -295,8 +312,15 @@ $font-family-used: 'Poppins';
     @include assign-color-mixin("expert-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
     @include assign-color-mixin("expert-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
-.expert-team-cards>div{
-    border: 1px solid rgb(233, 228, 228);
+.expert-team-section {
+    padding: 0 2rem;
+}
+@media (min-width: 1200px){
+    .expert-team-section {
+        padding: 0 10rem;
+    }
+}
+.expert-team-cards>div>div{
     transition: transform 0.6s ease-out;
     &:hover{
         transform: scale(1.02);
@@ -354,11 +378,17 @@ $font-family-used: 'Poppins';
     @include assign-color-mixin("subscribe-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
     @include assign-color-mixin("subscribe-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
+.subscribe-section {
+    padding: 0 2rem;
+}
 .speed-subscribe-input {
     width: 90%;
     outline: none;
 }
 @media (min-width: 1200px){ //extra Large
+    .subscribe-section {
+        padding: 0 10rem;
+    }
     .speed-subscribe-input{
         width: 80%;
     }
@@ -367,6 +397,6 @@ $font-family-used: 'Poppins';
 // FOOTER SECTION
 @include assign-color-mixin("footer-copyright", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
 @include assign-color-mixin("footer-options", $sections-heading-color, $sections-content-fw, 20px, $font-family-used);
-.footer-last-text p{
+.footer-last-text div p{
     cursor: pointer;
 }
