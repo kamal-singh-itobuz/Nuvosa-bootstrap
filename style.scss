@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 $button-color: #FAD725;
 $expert-purple-color: #6F77F1;
 $hero-section-content-color: #727272;
-$sections-heading-color: #212528;
 $sections-content-color: #828282;
 $sections-heading-fs-md: 50px;
 $sections-heading-fs-sm: 35px;
@@ -17,15 +18,31 @@ $sections-content-fs-sm: 13px;
 $sections-content-fw: 400;
 $sections-heading-fw: 500;
 $font-family-used: 'Poppins';
-@mixin assign-color-mixin($name, $color, $font-weight, $font-size, $font-family){
-    .#{$name}{
+
+:root {
+    --section-heading-color: black;
+    --background-color: #e5e5e5;
+    --cards-bg-color: #f2efef;
+}
+
+
+.dark-theme {
+    --section-heading-color: #ffffff;
+    background-color: #14213d;
+    --background-color: #14213d;
+    --cards-bg-color: #023047;
+}
+
+@mixin assign-color-mixin($name, $color, $font-weight, $font-size, $font-family) {
+    .#{$name} {
         color: $color;
         font-weight: $font-weight;
         font-size: $font-size;
         font-family: $font-family;
     }
 }
-@mixin button-style-mixin($name, $color, $bg-color, $font-size, $font-weight, $border-radius){
+
+@mixin button-style-mixin($name, $color, $bg-color, $font-size, $font-weight, $border-radius) {
     .#{$name} {
         color: $color;
         background-color: $bg-color !important;
@@ -34,29 +51,47 @@ $font-family-used: 'Poppins';
         border-radius: $border-radius;
     }
 }
+
 .purple-txt-each-section {
     color: $expert-purple-color !important;
 }
+
 // NAVBAR STYLE
-@include assign-color-mixin("navbar-brand-style", $sections-heading-color, 500, 40px, $font-family-used);
-.navbar-logo{
-    .navbar-brand-style{
+@include assign-color-mixin("navbar-brand-style", var(--section-heading-color), 500, 40px, $font-family-used);
+
+.navbar-logo {
+    .navbar-brand-style {
         cursor: pointer;
     }
-    .dot-with-logo{
+
+    .dot-with-logo {
         cursor: pointer;
         background-color: #BC424E;
         height: 8px;
         width: 8px;
         border-radius: 50%;
     }
+
+    .moon-sun-toggle {
+        margin-left: 0.8rem;
+        width: 2rem;
+        cursor: pointer;
+    }
 }
-@include assign-color-mixin("nav-link", $sections-heading-color, 400, 24px, $font-family-used);
+
+@include assign-color-mixin("nav-link", var(--section-heading-color), 400, 24px, $font-family-used);
+
 .let-us-talk-btn {
-    border: 2px solid $sections-heading-color;
-    font: 500 24px $font-family-used;
+    border: 2px solid var(--section-heading-color);
+    font: 400 16px $font-family-used;
+    padding: 0.3rem 1rem;
+    border-radius: 0.3rem;
+    background-color: var(--background-color);
+    color: var(--section-heading-color);
 }
-@include button-style-mixin("search-btn", $sections-heading-color, $button-color, 24px, 500, 1px);
+
+@include button-style-mixin("search-btn", var(--section-heading-color), $button-color, 24px, 500, 1px);
+
 .nav-long-line {
     display: none;
     height: 2px;
@@ -66,6 +101,7 @@ $font-family-used: 'Poppins';
     bottom: 6px;
     left: 12%;
 }
+
 .nav-short-line {
     display: none;
     height: 2px;
@@ -75,21 +111,33 @@ $font-family-used: 'Poppins';
     bottom: 6px;
     left: 80%;
 }
-.nav-item{
+
+.nav-item {
+    a {
+        color: var(--section-heading-color);
+    }
+
     transition: all 0.9s ease-out;
 }
-.nav-item:hover{
-    @media (min-width: 768px){
-        .nav-long-line, .nav-short-line{
+
+.nav-item:hover {
+    @media (min-width: 768px) {
+        a {
+            color: var(--section-heading-color);
+        }
+
+        .nav-long-line,
+        .nav-short-line {
             display: inline-block;
         }
     }
 }
+
 //HERO SECTION
-@include assign-color-mixin("hero-main-heading", $sections-heading-color, 700, 40px, 'Inter');
+@include assign-color-mixin("hero-main-heading", var(--section-heading-color), 700, 40px, 'Inter');
 @include assign-color-mixin("hero-text", $hero-section-content-color, 400, 15px, $font-family-used);
 @include assign-color-mixin("expert-txt", $expert-purple-color, 600, 40px, $font-family-used);
-@include button-style-mixin("hero-sec-button", $sections-heading-color, $button-color, 17px, 500, 1px);
+@include button-style-mixin("hero-sec-button", var(--section-heading-color), $button-color, 17px, 500, 1px);
 
 .expert-txt {
     border: 2.288px solid $expert-purple-color;
@@ -97,79 +145,96 @@ $font-family-used: 'Poppins';
     -webkit-transform: rotate(-8.234deg);
     display: inline-block;
 }
-.expert-dot{
+
+.expert-dot {
     height: 12px;
     width: 12px;
     background-color: $expert-purple-color;
 }
 
-@media (min-width:1024px){
-    @include assign-color-mixin("hero-main-heading", $sections-heading-color, 700, 55px, 'Inter');
+@media (min-width:1024px) {
+    @include assign-color-mixin("hero-main-heading", var(--section-heading-color), 700, 55px, 'Inter');
     @include assign-color-mixin("expert-txt", $expert-purple-color, 700, 55px, $font-family-used);
-    @include button-style-mixin("hero-sec-button", $sections-heading-color, $button-color, 22px, 500, 1px);
-    .hero-main-img{
+    @include button-style-mixin("hero-sec-button", var(--section-heading-color), $button-color, 22px, 500, 1px);
+
+    .hero-main-img {
         width: 500px;
         height: 600px;
     }
 }
-.creative-team-card{
+
+.creative-team-card {
     width: 220px;
     height: 100px;
-    box-shadow: 5px 5px 20px rgb(208, 200, 200);
+    box-shadow: 0 0 20px rgb(208, 200, 200);
     left: 15%;
+    background-color: var(--cards-bg-color);
 }
-@media (min-width: 992px){
+
+@media (min-width: 992px) {
     .creative-team-card {
         left: -90px;
         bottom: 20px;
     }
 }
-@media (min-width: 1260px){
+
+@media (min-width: 1260px) {
     .creative-team-card {
         left: -90px;
         bottom: 75px;
     }
 }
-.team-member-img-container1{
+
+.team-member-img-container1 {
     left: 10px;
 }
-.team-member-img-container2{
+
+.team-member-img-container2 {
     left: 45px;
 }
-.team-member-img-container3{
+
+.team-member-img-container3 {
     left: 80px;
 }
-.team-member-img-container4{
+
+.team-member-img-container4 {
     left: 115px;
 }
-.team-member-img-container5{
+
+.team-member-img-container5 {
     left: 150px;
 }
 
 //MANAGEMENT SECTION
-@include assign-color-mixin("management-headings", $sections-heading-color, 400, 24px, $font-family-used);
+@include assign-color-mixin("management-headings", var(--section-heading-color), 400, 24px, $font-family-used);
 @include assign-color-mixin("management-text", $sections-content-color, 400, 14px, $font-family-used);
 @media (min-width: 1232px) {
-    @include assign-color-mixin("management-headings", $sections-heading-color, 400, 34px, $font-family-used);
+    @include assign-color-mixin("management-headings", var(--section-heading-color), 400, 34px, $font-family-used);
     @include assign-color-mixin("management-text", $sections-content-color, 400, 17px, $font-family-used);
 }
 
+.management-cards {
+    background-color: var(--cards-bg-color);
+}
+
 //OPTIMISING WEBSITE SECTION
-@include assign-color-mixin("optimising-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("optimising-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
 @include assign-color-mixin("optimising-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
-@include assign-color-mixin("op-card-heading", $sections-heading-color, 500, 21px, $font-family-used);
+@include assign-color-mixin("op-card-heading", var(--section-heading-color), 500, 21px, $font-family-used);
 @include assign-color-mixin("op-card-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
-@media (min-width: 485px){
-    @include assign-color-mixin("optimising-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+@media (min-width: 485px) {
+    @include assign-color-mixin("optimising-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
     @include assign-color-mixin("optimising-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
-    @include assign-color-mixin("op-card-heading", $sections-heading-color, 500, 24px, $font-family-used);
+    @include assign-color-mixin("op-card-heading", var(--section-heading-color), 500, 24px, $font-family-used);
     @include assign-color-mixin("op-card-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
-.optimising-cards> div >div{
+
+.optimising-cards>div>div {
     transition: transform 0.6s ease-out;
+
     &:hover {
         transform: scale(1.01);
-        box-shadow: 5px 5px 20px rgb(203, 200, 200);
+        box-shadow: 0 0 20px rgb(203, 200, 200);
         border-bottom: 2px solid $expert-purple-color;
     }
 }
@@ -179,191 +244,233 @@ $font-family-used: 'Poppins';
 .bussiness-section {
     background-image: url("./images/solution-for-bussiness/bg-lines.svg");
 }
-@include button-style-mixin("bussiness-sec-button", $sections-heading-color, $button-color, 18px, 500, 1px);
-@include assign-color-mixin("bussiness-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+
+@include button-style-mixin("bussiness-sec-button", var(--section-heading-color), $button-color, 18px, 500, 1px);
+@include assign-color-mixin("bussiness-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
 @include assign-color-mixin("bussiness-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
 @media (min-width: 485px) {
-    @include assign-color-mixin("bussiness-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+    @include assign-color-mixin("bussiness-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
     @include assign-color-mixin("bussiness-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
-    @include button-style-mixin("bussiness-sec-button", $sections-heading-color, $button-color, 24px, 500, 1px);
+    @include button-style-mixin("bussiness-sec-button", var(--section-heading-color), $button-color, 24px, 500, 1px);
 }
 
 // GROW YOUR BUSSINESS SECTION
-@include assign-color-mixin("grow-buss-subheading", $sections-heading-color, $sections-heading-fw, 22px, $font-family-used);
+@include assign-color-mixin("grow-buss-subheading", var(--section-heading-color), $sections-heading-fw, 22px, $font-family-used);
 @include assign-color-mixin("grow-buss-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 @include assign-color-mixin("grow-buss-readmore", $expert-purple-color, $sections-heading-fw, 14px, $font-family-used);
-.grow-buss-cards>div{
+
+.grow-buss-cards>div {
     transition: transform 0.6s ease-out;
-    &:hover{
+
+    &:hover {
         transform: scale(1.01);
-        box-shadow: 5px 5px 20px rgb(203, 200, 200);
+        box-shadow: 0 0 20px rgb(203, 200, 200);
     }
 }
 
 // CHOOSER SECTION
-@include button-style-mixin("chooser-button", $sections-heading-color, $button-color, 14px, $sections-heading-fw, 2px);
-@include assign-color-mixin("chooser-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+@include button-style-mixin("chooser-button", var(--section-heading-color), $button-color, 14px, $sections-heading-fw, 2px);
+@include assign-color-mixin("chooser-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
 @include assign-color-mixin("chooser-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
-@include assign-color-mixin("chooser-card-heading", $sections-heading-color, $sections-heading-fw, 20px, $font-family-used);
+@include assign-color-mixin("chooser-card-heading", var(--section-heading-color), $sections-heading-fw, 20px, $font-family-used);
 @include assign-color-mixin("chooser-card-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
-.chooser-cards>div>div{
-    box-shadow: 2px 2px 10px rgb(229, 226, 226);
+
+.chooser-cards>div>div {
+    background-color: var(--cards-bg-color);
+    box-shadow: 0 0 10px rgb(229, 226, 226);
     transition: transform 0.6s ease-out;
-    &:hover{
+
+    &:hover {
         transform: scale(1.01);
-        box-shadow: 5px 5px 20px rgb(203, 200, 200);
+        box-shadow: 0 0 20px rgb(203, 200, 200);
     }
 }
 
 //NEED IT SECTION
-@include assign-color-mixin("need-it-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+
+@include assign-color-mixin("need-it-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
 @include assign-color-mixin("need-it-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
-@include assign-color-mixin("need-card-heading", $sections-heading-color, $sections-heading-fw, 17px, $font-family-used);
+@include assign-color-mixin("need-card-heading", var(--section-heading-color), $sections-heading-fw, 17px, $font-family-used);
 @media (min-width: 485px) {
-    @include assign-color-mixin("need-it-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+    @include assign-color-mixin("need-it-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
     @include assign-color-mixin("need-it-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
-    @include assign-color-mixin("need-card-heading", $sections-heading-color, 500, 23px, $font-family-used);
+    @include assign-color-mixin("need-card-heading", var(--section-heading-color), 500, 23px, $font-family-used);
 }
-.need-it-cards>div{
+
+.need-it-cards>div {
     transition: transform 0.6s ease-out;
 }
-.need-it-cards>div:hover{
+
+.need-it-cards>div:hover {
     transform: scale(1.01);
-    box-shadow: 3px 3px 10px rgb(203, 200, 200);
+    box-shadow: 0 0 15px rgb(203, 200, 200);
 }
+
 // STATS SECTION
-.stats-section{
-    .stats-dot span{
+.stats-section {
+    .stats-dot span {
         display: inline-block;
         background-color: #D1563B;
         height: 8px;
         width: 8px;
         border-radius: 100%;
     }
-    .stats-dot2 span{
+
+    .stats-dot2 span {
         background-color: #3BD165;
     }
-    .stats-dot3 span{
+
+    .stats-dot3 span {
         background-color: #F7C745;
     }
+
     @include assign-color-mixin("stats-values", #666565, 600, 60px, $font-family-used);
     @include assign-color-mixin("stats-text", #6F6F6F, 500, 17px, $font-family-used);
 }
-@media (min-width: 992px){
-    .stats-section >div {
+
+@media (min-width: 992px) {
+    .stats-section>div {
         width: 75%;
     }
 }
 
 // WEBSITE SPEED SECTION
-@include assign-color-mixin("website-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("website-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
 @include assign-color-mixin("website-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
-@include button-style-mixin("speed-submit-button", $sections-heading-color, $button-color, 16px, 500, 2px);
-@media (min-width: 485px){
-    @include assign-color-mixin("website-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+@include button-style-mixin("speed-submit-button", var(--section-heading-color), $button-color, 16px, 500, 2px);
+@media (min-width: 485px) {
+    @include assign-color-mixin("website-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
     @include assign-color-mixin("website-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
 
 
 // OUR PLANS SECTION
-@include assign-color-mixin("our-plan-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("our-plan-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
 @include assign-color-mixin("our-plan-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
-@include assign-color-mixin("card-price", $sections-heading-color, $sections-heading-fw, 49px, $font-family-used);
+@include assign-color-mixin("card-price", var(--section-heading-color), $sections-heading-fw, 49px, $font-family-used);
 @include assign-color-mixin("plan-card-heading", $expert-purple-color, $sections-heading-fw, 22px, $font-family-used);
-@media (min-width: 485px){
-    @include assign-color-mixin("our-plan-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+@media (min-width: 485px) {
+    @include assign-color-mixin("our-plan-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
     @include assign-color-mixin("our-plan-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
+
 .our-plans-section {
     padding: 0 2rem;
 }
-@media (min-width: 1200px){
+
+@media (min-width: 1200px) {
     .our-plans-section {
         padding: 0 10rem;
     }
 }
-.plans-cards>div>div{
+
+.plans-cards>div>div {
+    background-color: var(--cards-bg-color);
     transition: transform 0.6s ease-out;
-    .plans-buttons{
+
+    h6 {
+        color: var(--section-heading-color);
+    }
+
+    .plans-buttons {
+        color: var(--section-heading-color);
         border: 1px solid black;
-        &:hover{
+
+        &:hover {
             background-color: $button-color;
             border: 1px solid black;
         }
     }
-    &:hover{
+
+    &:hover {
         transform: scale(1.02);
-        box-shadow: 3px 3px 10px rgb(203, 200, 200);
-        // background-color: $expert-purple-color !important;
+        box-shadow: 0 0 20px rgb(203, 200, 200);
         background: url("./images/our-plans/bg-image.svg") no-repeat center;
-        h4, h6, p, .card-price{
+
+        h4,
+        h6,
+        p,
+        .card-price {
             color: white;
-            // -webkit-text-stroke: 1px black;
         }
     }
 }
 
 // EXPERT TEAM MEMBERS SECTION
-@include assign-color-mixin("expert-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("expert-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
 @include assign-color-mixin("expert-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
-@include assign-color-mixin("expert-name", $sections-heading-color, $sections-heading-fw, 22px, $font-family-used);
+@include assign-color-mixin("expert-name", var(--section-heading-color), $sections-heading-fw, 22px, $font-family-used);
 @include assign-color-mixin("expert-post", $sections-content-color, $sections-content-fw, 15px, $font-family-used);
-@media (min-width: 485px){
-    @include assign-color-mixin("expert-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+@media (min-width: 485px) {
+    @include assign-color-mixin("expert-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
     @include assign-color-mixin("expert-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
+
 .expert-team-section {
     padding: 0 2rem;
 }
-@media (min-width: 1200px){
+
+@media (min-width: 1200px) {
     .expert-team-section {
         padding: 0 10rem;
     }
 }
-.expert-team-cards>div>div{
+
+.expert-team-cards>div>div {
     transition: transform 0.6s ease-out;
-    &:hover{
+
+    &:hover {
         transform: scale(1.02);
         border: none;
-        box-shadow: 3px 3px 20px rgb(203, 200, 200);
+        box-shadow: 0 0 20px rgb(203, 200, 200);
     }
 }
 
 // OUR CLIENTS SECTION
-@include assign-color-mixin("client-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("client-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
 @include assign-color-mixin("client-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
 @include assign-color-mixin("client-card-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
-@media (min-width: 485px){
-    @include assign-color-mixin("client-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+@media (min-width: 485px) {
+    @include assign-color-mixin("client-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
     @include assign-color-mixin("client-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
     @include assign-color-mixin("client-card-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
 
-.clients-cards::-webkit-scrollbar{
+.clients-cards::-webkit-scrollbar {
     display: none;
 }
-.clients-cards>div{
+
+.clients-cards>div {
     width: 300px;
     transition: transform 0.6s ease-out;
+
     &:hover {
-        transform: scale(1.02);
+        transform: scale(1.01);
         border: none;
-        box-shadow: 3px 3px 20px rgb(203, 200, 200);
+        box-shadow: 0 0 10px rgb(203, 200, 200);
+    }
+
+    h5,
+    h6 {
+        color: var(--section-heading-color);
     }
 }
+
 @media (min-width: 700px) {
-    .clients-cards>div{
+    .clients-cards>div {
         width: 600px;
     }
 }
-.our-clients-scroll-dots >span{
+
+.our-clients-scroll-dots>span {
     cursor: pointer;
     height: 10px;
     width: 10px;
     border-radius: 50%;
     background-color: grey;
 }
-.our-clients-scroll-dots .scroll-second{
+
+.our-clients-scroll-dots .scroll-second {
     background-color: $expert-purple-color;
     height: 18px;
     width: 18px;
@@ -371,32 +478,41 @@ $font-family-used: 'Poppins';
 
 
 // SUBSCRIBE SECTION
-@include assign-color-mixin("subscribe-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
+@include assign-color-mixin("subscribe-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-sm, $font-family-used);
 @include assign-color-mixin("subscribe-text", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
-@include button-style-mixin("subscribe-button", $sections-heading-color, $expert-purple-color, 16px, 500, 2px);
-@media (min-width: 485px){
-    @include assign-color-mixin("subscribe-heading", $sections-heading-color, $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
+@include button-style-mixin("subscribe-button", var(--section-heading-color), $expert-purple-color, 16px, 500, 2px);
+@media (min-width: 485px) {
+    @include assign-color-mixin("subscribe-heading", var(--section-heading-color), $sections-heading-fw, $sections-heading-fs-md, $font-family-used);
     @include assign-color-mixin("subscribe-text", $sections-content-color, $sections-content-fw, $sections-content-fs-md, $font-family-used);
 }
+
 .subscribe-section {
     padding: 0 2rem;
+
+    >div {
+        background-color: var(--cards-bg-color);
+    }
 }
+
 .speed-subscribe-input {
     width: 90%;
     outline: none;
 }
-@media (min-width: 1200px){ //extra Large
+
+@media (min-width: 1200px) {
     .subscribe-section {
         padding: 0 10rem;
     }
-    .speed-subscribe-input{
+
+    .speed-subscribe-input {
         width: 80%;
     }
 }
 
 // FOOTER SECTION
 @include assign-color-mixin("footer-copyright", $sections-content-color, $sections-content-fw, $sections-content-fs-sm, $font-family-used);
-@include assign-color-mixin("footer-options", $sections-heading-color, $sections-content-fw, 20px, $font-family-used);
-.footer-last-text div p{
+@include assign-color-mixin("footer-options", var(--section-heading-color), $sections-content-fw, 20px, $font-family-used);
+
+.footer-last-text div p {
     cursor: pointer;
 }

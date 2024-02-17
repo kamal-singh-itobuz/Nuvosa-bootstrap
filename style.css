@@ -6,12 +6,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  --section-heading-color: black;
+  --background-color: #e5e5e5;
+  --cards-bg-color: #f2efef;
+}
+
+.dark-theme {
+  --section-heading-color: #ffffff;
+  background-color: #14213d;
+  --background-color: #14213d;
+  --cards-bg-color: #023047;
+}
+
 .purple-txt-each-section {
   color: #6F77F1 !important;
 }
 
 .navbar-brand-style {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 40px;
   font-family: "Poppins";
@@ -27,21 +40,30 @@
   width: 8px;
   border-radius: 50%;
 }
+.navbar-logo .moon-sun-toggle {
+  margin-left: 0.8rem;
+  width: 2rem;
+  cursor: pointer;
+}
 
 .nav-link {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 400;
   font-size: 24px;
   font-family: "Poppins";
 }
 
 .let-us-talk-btn {
-  border: 2px solid #212528;
-  font: 500 24px "Poppins";
+  border: 2px solid var(--section-heading-color);
+  font: 400 16px "Poppins";
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+  background-color: var(--background-color);
+  color: var(--section-heading-color);
 }
 
 .search-btn {
-  color: #212528;
+  color: var(--section-heading-color);
   background-color: #FAD725 !important;
   font-size: 24px !important;
   font-weight: 500 !important;
@@ -71,15 +93,21 @@
 .nav-item {
   transition: all 0.9s ease-out;
 }
+.nav-item a {
+  color: var(--section-heading-color);
+}
 
 @media (min-width: 768px) {
+  .nav-item:hover a {
+    color: var(--section-heading-color);
+  }
   .nav-item:hover .nav-long-line, .nav-item:hover .nav-short-line {
     display: inline-block;
   }
 }
 
 .hero-main-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 700;
   font-size: 40px;
   font-family: "Inter";
@@ -100,7 +128,7 @@
 }
 
 .hero-sec-button {
-  color: #212528;
+  color: var(--section-heading-color);
   background-color: #FAD725 !important;
   font-size: 17px !important;
   font-weight: 500 !important;
@@ -122,7 +150,7 @@
 
 @media (min-width: 1024px) {
   .hero-main-heading {
-    color: #212528;
+    color: var(--section-heading-color);
     font-weight: 700;
     font-size: 55px;
     font-family: "Inter";
@@ -134,7 +162,7 @@
     font-family: "Poppins";
   }
   .hero-sec-button {
-    color: #212528;
+    color: var(--section-heading-color);
     background-color: #FAD725 !important;
     font-size: 22px !important;
     font-weight: 500 !important;
@@ -148,8 +176,9 @@
 .creative-team-card {
   width: 220px;
   height: 100px;
-  box-shadow: 5px 5px 20px rgb(208, 200, 200);
+  box-shadow: 0 0 20px rgb(208, 200, 200);
   left: 15%;
+  background-color: var(--cards-bg-color);
 }
 
 @media (min-width: 992px) {
@@ -185,7 +214,7 @@
 }
 
 .management-headings {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 400;
   font-size: 24px;
   font-family: "Poppins";
@@ -200,7 +229,7 @@
 
 @media (min-width: 1232px) {
   .management-headings {
-    color: #212528;
+    color: var(--section-heading-color);
     font-weight: 400;
     font-size: 34px;
     font-family: "Poppins";
@@ -212,8 +241,12 @@
     font-family: "Poppins";
   }
 }
+.management-cards {
+  background-color: var(--cards-bg-color);
+}
+
 .optimising-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 35px;
   font-family: "Poppins";
@@ -227,7 +260,7 @@
 }
 
 .op-card-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 21px;
   font-family: "Poppins";
@@ -242,7 +275,7 @@
 
 @media (min-width: 485px) {
   .optimising-heading {
-    color: #212528;
+    color: var(--section-heading-color);
     font-weight: 500;
     font-size: 50px;
     font-family: "Poppins";
@@ -254,7 +287,7 @@
     font-family: "Poppins";
   }
   .op-card-heading {
-    color: #212528;
+    color: var(--section-heading-color);
     font-weight: 500;
     font-size: 24px;
     font-family: "Poppins";
@@ -271,7 +304,7 @@
 }
 .optimising-cards > div > div:hover {
   transform: scale(1.01);
-  box-shadow: 5px 5px 20px rgb(203, 200, 200);
+  box-shadow: 0 0 20px rgb(203, 200, 200);
   border-bottom: 2px solid #6F77F1;
 }
 
@@ -280,7 +313,7 @@
 }
 
 .bussiness-sec-button {
-  color: #212528;
+  color: var(--section-heading-color);
   background-color: #FAD725 !important;
   font-size: 18px !important;
   font-weight: 500 !important;
@@ -288,7 +321,7 @@
 }
 
 .bussiness-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 35px;
   font-family: "Poppins";
@@ -303,7 +336,7 @@
 
 @media (min-width: 485px) {
   .bussiness-heading {
-    color: #212528;
+    color: var(--section-heading-color);
     font-weight: 500;
     font-size: 50px;
     font-family: "Poppins";
@@ -315,7 +348,7 @@
     font-family: "Poppins";
   }
   .bussiness-sec-button {
-    color: #212528;
+    color: var(--section-heading-color);
     background-color: #FAD725 !important;
     font-size: 24px !important;
     font-weight: 500 !important;
@@ -323,7 +356,7 @@
   }
 }
 .grow-buss-subheading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 22px;
   font-family: "Poppins";
@@ -348,11 +381,11 @@
 }
 .grow-buss-cards > div:hover {
   transform: scale(1.01);
-  box-shadow: 5px 5px 20px rgb(203, 200, 200);
+  box-shadow: 0 0 20px rgb(203, 200, 200);
 }
 
 .chooser-button {
-  color: #212528;
+  color: var(--section-heading-color);
   background-color: #FAD725 !important;
   font-size: 14px !important;
   font-weight: 500 !important;
@@ -360,7 +393,7 @@
 }
 
 .chooser-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 50px;
   font-family: "Poppins";
@@ -374,7 +407,7 @@
 }
 
 .chooser-card-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 20px;
   font-family: "Poppins";
@@ -388,16 +421,17 @@
 }
 
 .chooser-cards > div > div {
-  box-shadow: 2px 2px 10px rgb(229, 226, 226);
+  background-color: var(--cards-bg-color);
+  box-shadow: 0 0 10px rgb(229, 226, 226);
   transition: transform 0.6s ease-out;
 }
 .chooser-cards > div > div:hover {
   transform: scale(1.01);
-  box-shadow: 5px 5px 20px rgb(203, 200, 200);
+  box-shadow: 0 0 20px rgb(203, 200, 200);
 }
 
 .need-it-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 35px;
   font-family: "Poppins";
@@ -411,7 +445,7 @@
 }
 
 .need-card-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 17px;
   font-family: "Poppins";
@@ -419,7 +453,7 @@
 
 @media (min-width: 485px) {
   .need-it-heading {
-    color: #212528;
+    color: var(--section-heading-color);
     font-weight: 500;
     font-size: 50px;
     font-family: "Poppins";
@@ -431,7 +465,7 @@
     font-family: "Poppins";
   }
   .need-card-heading {
-    color: #212528;
+    color: var(--section-heading-color);
     font-weight: 500;
     font-size: 23px;
     font-family: "Poppins";
@@ -443,7 +477,7 @@
 
 .need-it-cards > div:hover {
   transform: scale(1.01);
-  box-shadow: 3px 3px 10px rgb(203, 200, 200);
+  box-shadow: 0 0 15px rgb(203, 200, 200);
 }
 
 .stats-section .stats-dot span {
@@ -478,7 +512,7 @@
   }
 }
 .website-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 35px;
   font-family: "Poppins";
@@ -492,7 +526,7 @@
 }
 
 .speed-submit-button {
-  color: #212528;
+  color: var(--section-heading-color);
   background-color: #FAD725 !important;
   font-size: 16px !important;
   font-weight: 500 !important;
@@ -501,7 +535,7 @@
 
 @media (min-width: 485px) {
   .website-heading {
-    color: #212528;
+    color: var(--section-heading-color);
     font-weight: 500;
     font-size: 50px;
     font-family: "Poppins";
@@ -514,7 +548,7 @@
   }
 }
 .our-plan-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 35px;
   font-family: "Poppins";
@@ -528,7 +562,7 @@
 }
 
 .card-price {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 49px;
   font-family: "Poppins";
@@ -543,7 +577,7 @@
 
 @media (min-width: 485px) {
   .our-plan-heading {
-    color: #212528;
+    color: var(--section-heading-color);
     font-weight: 500;
     font-size: 50px;
     font-family: "Poppins";
@@ -565,9 +599,14 @@
   }
 }
 .plans-cards > div > div {
+  background-color: var(--cards-bg-color);
   transition: transform 0.6s ease-out;
 }
+.plans-cards > div > div h6 {
+  color: var(--section-heading-color);
+}
 .plans-cards > div > div .plans-buttons {
+  color: var(--section-heading-color);
   border: 1px solid black;
 }
 .plans-cards > div > div .plans-buttons:hover {
@@ -576,7 +615,7 @@
 }
 .plans-cards > div > div:hover {
   transform: scale(1.02);
-  box-shadow: 3px 3px 10px rgb(203, 200, 200);
+  box-shadow: 0 0 20px rgb(203, 200, 200);
   background: url("./images/our-plans/bg-image.svg") no-repeat center;
 }
 .plans-cards > div > div:hover h4, .plans-cards > div > div:hover h6, .plans-cards > div > div:hover p, .plans-cards > div > div:hover .card-price {
@@ -584,7 +623,7 @@
 }
 
 .expert-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 35px;
   font-family: "Poppins";
@@ -598,7 +637,7 @@
 }
 
 .expert-name {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 22px;
   font-family: "Poppins";
@@ -613,7 +652,7 @@
 
 @media (min-width: 485px) {
   .expert-heading {
-    color: #212528;
+    color: var(--section-heading-color);
     font-weight: 500;
     font-size: 50px;
     font-family: "Poppins";
@@ -640,11 +679,11 @@
 .expert-team-cards > div > div:hover {
   transform: scale(1.02);
   border: none;
-  box-shadow: 3px 3px 20px rgb(203, 200, 200);
+  box-shadow: 0 0 20px rgb(203, 200, 200);
 }
 
 .client-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 35px;
   font-family: "Poppins";
@@ -666,7 +705,7 @@
 
 @media (min-width: 485px) {
   .client-heading {
-    color: #212528;
+    color: var(--section-heading-color);
     font-weight: 500;
     font-size: 50px;
     font-family: "Poppins";
@@ -693,9 +732,12 @@
   transition: transform 0.6s ease-out;
 }
 .clients-cards > div:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
   border: none;
-  box-shadow: 3px 3px 20px rgb(203, 200, 200);
+  box-shadow: 0 0 10px rgb(203, 200, 200);
+}
+.clients-cards > div h5, .clients-cards > div h6 {
+  color: var(--section-heading-color);
 }
 
 @media (min-width: 700px) {
@@ -718,7 +760,7 @@
 }
 
 .subscribe-heading {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 500;
   font-size: 35px;
   font-family: "Poppins";
@@ -732,7 +774,7 @@
 }
 
 .subscribe-button {
-  color: #212528;
+  color: var(--section-heading-color);
   background-color: #6F77F1 !important;
   font-size: 16px !important;
   font-weight: 500 !important;
@@ -741,7 +783,7 @@
 
 @media (min-width: 485px) {
   .subscribe-heading {
-    color: #212528;
+    color: var(--section-heading-color);
     font-weight: 500;
     font-size: 50px;
     font-family: "Poppins";
@@ -755,6 +797,9 @@
 }
 .subscribe-section {
   padding: 0 2rem;
+}
+.subscribe-section > div {
+  background-color: var(--cards-bg-color);
 }
 
 .speed-subscribe-input {
@@ -778,7 +823,7 @@
 }
 
 .footer-options {
-  color: #212528;
+  color: var(--section-heading-color);
   font-weight: 400;
   font-size: 20px;
   font-family: "Poppins";
