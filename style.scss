@@ -58,7 +58,9 @@ $font-family-used: 'Poppins';
 
 // NAVBAR STYLE
 @include assign-color-mixin("navbar-brand-style", var(--section-heading-color), 500, 40px, $font-family-used);
-
+.navbar {
+    background-color: var(--background-color);
+}
 .navbar-logo {
     .navbar-brand-style {
         cursor: pointer;
@@ -71,16 +73,14 @@ $font-family-used: 'Poppins';
         width: 8px;
         border-radius: 50%;
     }
-
-    .moon-sun-toggle {
-        margin-left: 0.8rem;
-        width: 2rem;
-        cursor: pointer;
-    }
 }
 
 @include assign-color-mixin("nav-link", var(--section-heading-color), 400, 24px, $font-family-used);
-
+.moon-sun-toggle {
+    margin-left: 0.8rem;
+    width: 2rem;
+    cursor: pointer;
+}
 .let-us-talk-btn {
     border: 2px solid var(--section-heading-color);
     font: 400 16px $font-family-used;
@@ -217,7 +217,7 @@ $font-family-used: 'Poppins';
 .management-cards {
     background-color: var(--cards-bg-color);
     .right-arrow {
-        width: 2rem;
+        width: 1.6rem;
     }
 }
 
@@ -287,6 +287,11 @@ $font-family-used: 'Poppins';
     &:hover {
         transform: scale(1.01);
         box-shadow: 0 0 20px rgb(203, 200, 200);
+    }
+    img {
+        width: 90%;
+        aspect-ratio: 5/3;
+        object-fit: cover;
     }
 }
 
