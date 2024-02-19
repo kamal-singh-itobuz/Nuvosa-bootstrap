@@ -9,7 +9,7 @@
 :root {
   --section-heading-color: black;
   --background-color: #e5e5e5;
-  --cards-bg-color: #f2efef;
+  --cards-bg-color: #f8f9fa;
 }
 
 .dark-theme {
@@ -101,7 +101,8 @@
   .nav-item:hover a {
     color: var(--section-heading-color);
   }
-  .nav-item:hover .nav-long-line, .nav-item:hover .nav-short-line {
+  .nav-item:hover .nav-long-line,
+  .nav-item:hover .nav-short-line {
     display: inline-block;
   }
 }
@@ -179,6 +180,7 @@
   box-shadow: 0 0 20px rgb(208, 200, 200);
   left: 15%;
   background-color: var(--cards-bg-color);
+  color: var(--section-heading-color);
 }
 
 @media (min-width: 992px) {
@@ -243,6 +245,9 @@
 }
 .management-cards {
   background-color: var(--cards-bg-color);
+}
+.management-cards .right-arrow {
+  width: 2rem;
 }
 
 .optimising-heading {
@@ -618,7 +623,10 @@
   box-shadow: 0 0 20px rgb(203, 200, 200);
   background: url("./images/our-plans/bg-image.svg") no-repeat center;
 }
-.plans-cards > div > div:hover h4, .plans-cards > div > div:hover h6, .plans-cards > div > div:hover p, .plans-cards > div > div:hover .card-price {
+.plans-cards > div > div:hover h4,
+.plans-cards > div > div:hover h6,
+.plans-cards > div > div:hover p,
+.plans-cards > div > div:hover .card-price {
   color: white;
 }
 
@@ -736,7 +744,8 @@
   border: none;
   box-shadow: 0 0 10px rgb(203, 200, 200);
 }
-.clients-cards > div h5, .clients-cards > div h6 {
+.clients-cards > div h5,
+.clients-cards > div h6 {
   color: var(--section-heading-color);
 }
 

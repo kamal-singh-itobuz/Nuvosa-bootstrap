@@ -22,7 +22,7 @@ $font-family-used: 'Poppins';
 :root {
     --section-heading-color: black;
     --background-color: #e5e5e5;
-    --cards-bg-color: #f2efef;
+    --cards-bg-color: #f8f9fa;
 }
 
 
@@ -169,6 +169,7 @@ $font-family-used: 'Poppins';
     box-shadow: 0 0 20px rgb(208, 200, 200);
     left: 15%;
     background-color: var(--cards-bg-color);
+    color: var(--section-heading-color);
 }
 
 @media (min-width: 992px) {
@@ -215,6 +216,9 @@ $font-family-used: 'Poppins';
 
 .management-cards {
     background-color: var(--cards-bg-color);
+    .right-arrow {
+        width: 2rem;
+    }
 }
 
 //OPTIMISING WEBSITE SECTION
